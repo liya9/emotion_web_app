@@ -63,4 +63,4 @@ if st.button('Submit'):
     plt.yticks(x, emo)
     plt.ylabel('情緒分類')
     plt.xlabel('百分比(%)')
-    st.pyplot(fig)
+    st.pyplot()
