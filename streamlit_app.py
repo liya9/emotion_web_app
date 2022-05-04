@@ -49,12 +49,11 @@ if st.button('Submit'):
     X_test = np.array(test_mfcc_vector).reshape(-1, 20, 50, 1)
     # 呼叫模型、預測，最後把結果放入dataframe呈現
     pred = model_4_emo.predict(X_test)
-    
-    fig, ax = plt.subplots()
-    ax.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
-    ax.rcParams['axes.unicode_minus'] = False
-    ax.rcParams.update({'font.size': 22})
 
+    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
+    plt.rcParams['axes.unicode_minus'] = False
+    plt.rcParams.update({'font.size': 22})
+    fig, ax = plt.subplots()
     emo = ['怒', '樂', '哀', '喜']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
