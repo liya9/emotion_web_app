@@ -9,7 +9,6 @@ import pandas as pd
 from tensorflow import keras
 from keras.models import load_model
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 
 # upload model
 #model_all_emo = load_model("lstm_model_all_emo_accuracy_0.6131_val_accuracy_0.5550.h5")
@@ -55,13 +54,12 @@ if st.button('Submit'):
     # plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
     # plt.rcParams['axes.unicode_minus'] = False
     plt.rcParams.update({'font.size': 22})
-    font = fm.FontProperties(fname='c:\\windows\\fonts\\simsun.ttc')  # speicify font
     emo = ['怒', '樂', '哀', '喜']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
     plt.figure(figsize=(15,5))
     plt.barh(x, percent, height=0.3)
     plt.yticks(x, emo)
-    plt.ylabel('情緒分類', fontproperties=font)
-    plt.xlabel('百分比(%)', fontproperties=font)
+    plt.ylabel('情緒分類')
+    plt.xlabel('百分比(%)')
     st.pyplot()
