@@ -57,7 +57,7 @@ if st.button('Submit'):
     emo = ['怒', '樂', '哀', '喜']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
-    ax.figure(figsize=(15,5))
+    fig.figure(figsize=(15,5))
     ax.barh(x, percent, height=0.3)
     ax.yticks(x, emo)
     ax.ylabel('情緒分類')
