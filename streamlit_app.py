@@ -9,6 +9,7 @@ import pandas as pd
 from tensorflow import keras
 from keras.models import load_model
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
 # upload model
 #model_all_emo = load_model("lstm_model_all_emo_accuracy_0.6131_val_accuracy_0.5550.h5")
