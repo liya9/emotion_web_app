@@ -54,12 +54,12 @@ if st.button('Submit'):
     # plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
     # plt.rcParams['axes.unicode_minus'] = False
     plt.rcParams.update({'font.size': 22})
-    emo = ['怒', '樂', '哀', '喜']
+    emo = ['angry', 'happy', 'sad', 'calm']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
     plt.figure(figsize=(15,5))
     plt.barh(x, percent, height=0.3)
     plt.yticks(x, emo)
-    plt.ylabel('情緒分類')
-    plt.xlabel('百分比(%)')
+    plt.ylabel('emotion category')
+    plt.xlabel('percentage(%)')
     st.pyplot()
