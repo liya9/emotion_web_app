@@ -1,4 +1,4 @@
-lightgbm
+libsndfile1-dev
 streamlit
 pandas
 numpy
