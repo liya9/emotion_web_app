@@ -10,6 +10,7 @@ from tensorflow import keras
 from keras.models import load_model
 import matplotlib.pyplot as plt
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 # upload model
 #model_all_emo = load_model("lstm_model_all_emo_accuracy_0.6131_val_accuracy_0.5550.h5")
 model_4_emo = load_model("lstm_model_4_emo_accuracy_0.9139_val_accuracy_0.8650.h5")
