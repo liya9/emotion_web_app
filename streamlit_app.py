@@ -62,6 +62,6 @@ if st.button('Submit'):
     plt.figure(figsize=(15,5))
     plt.barh(x, percent, height=0.3)
     plt.yticks(x, emo)
-    plt.ylabel('情緒分類'.str.decode('utf-8'), fontproperties=font)
-    plt.xlabel('百分比(%)'.str.decode('utf-8'), fontproperties=font)
+    plt.ylabel('情緒分類', fontproperties=font)
+    plt.xlabel('百分比(%)', fontproperties=font)
     st.pyplot()
