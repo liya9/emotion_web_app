@@ -1,5 +1,2 @@
 libsndfile1-dev
-language-pack-zh*
-chinese*
-
 
