@@ -31,19 +31,18 @@ st.markdown('**請上傳音檔:**')
 file_uploader = st.sidebar.file_uploader(label="", type=".wav")
 
 option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
+
 if file_uploader is not None and st.button('Submit'):
    emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
-    #輸入資料、提取特徵
-    test_mfcc_vector = []
-    
-    if option == 'sample 1':
-        path = "./voice/03-02-03-01-02-01-07_happy.wav"
-    if option == 'sample 2':    
-        path = "./voice/03-02-04-02-01-01-07_sad.wav"
-    if option == 'sample 3':
-        path = "./voice/03-02-05-01-02-01-07_angry.wav"
-    if option == 'sample 4':
-        path = "./voice/16_01_02_01_kids-talking_fear.wav"
+   test_mfcc_vector = []
+   if option == 'sample 1':
+       path = "./voice/03-02-03-01-02-01-07_happy.wav"
+   if option == 'sample 2':    
+       path = "./voice/03-02-04-02-01-01-07_sad.wav"
+   if option == 'sample 3':
+       path = "./voice/03-02-05-01-02-01-07_angry.wav"
+   if option == 'sample 4':
+       path = "./voice/16_01_02_01_kids-talking_fear.wav"
 
     mfcc = wav2mfcc(path, max_pad_size=50)
     test_mfcc_vector.append(mfcc)
