@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from tensorflow import keras
 from keras.models import load_model
+import matplotlib.pyplot as plt
 
 # upload model
 #model_all_emo = load_model("lstm_model_all_emo_accuracy_0.6131_val_accuracy_0.5550.h5")
@@ -29,10 +30,7 @@ def wav2mfcc(path, max_pad_size=11):
 # web page
 st.title('情感分析系統')
 
-#st.markdown('**請上傳音檔:**')
-#file_uploader = st.sidebar.file_uploader(label="", type=".wav")
-
-option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
+option = st.selectbox('Please Select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
 
 if st.button('Submit'):
     emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
@@ -51,4 +49,18 @@ if st.button('Submit'):
     X_test = np.array(test_mfcc_vector).reshape(-1, 20, 50, 1)
     # 呼叫模型、預測，最後把結果放入dataframe呈現
     pred = model_4_emo.predict(X_test)
-    pd.DataFrame(pred, columns = ['怒', '樂', '哀', '樂'])
+    
+    fig = plt.figure()
+    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
+    plt.rcParams['axes.unicode_minus'] = False
+    plt.rcParams.update({'font.size': 22})
+
+    emo = ['怒', '樂', '哀', '喜']
+    percent = list(pred[0]*100)
+    x = np.arange(len(emo))
+    plt.figure(figsize=(15,5))
+    plt.barh(x, percent, height=0.3)
+    plt.yticks(x, emo)
+    plt.ylabel('情緒分類')
+    plt.xlabel('百分比(%)')
+    st.pyplot(fig)
