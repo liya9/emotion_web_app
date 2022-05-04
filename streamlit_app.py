@@ -29,8 +29,8 @@ def wav2mfcc(path, max_pad_size=11):
 # web page
 st.title('情感分析系統')
 
-st.markdown('**請上傳音檔:**')
-file_uploader = st.sidebar.file_uploader(label="", type=".wav")
+#st.markdown('**請上傳音檔:**')
+#file_uploader = st.sidebar.file_uploader(label="", type=".wav")
 
 option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
 
