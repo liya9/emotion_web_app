@@ -50,17 +50,17 @@ if st.button('Submit'):
     # 呼叫模型、預測，最後把結果放入dataframe呈現
     pred = model_4_emo.predict(X_test)
     
-    fig = plt.figure()
-    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
-    plt.rcParams['axes.unicode_minus'] = False
-    plt.rcParams.update({'font.size': 22})
+    fig, ax = plt.subplots()
+    ax.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
+    ax.rcParams['axes.unicode_minus'] = False
+    ax.rcParams.update({'font.size': 22})
 
     emo = ['怒', '樂', '哀', '喜']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
-    plt.figure(figsize=(15,5))
-    plt.barh(x, percent, height=0.3)
-    plt.yticks(x, emo)
-    plt.ylabel('情緒分類')
-    plt.xlabel('百分比(%)')
+    ax.figure(figsize=(15,5))
+    ax.barh(x, percent, height=0.3)
+    ax.yticks(x, emo)
+    ax.ylabel('情緒分類')
+    ax.xlabel('百分比(%)')
     st.pyplot()
