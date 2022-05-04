@@ -30,12 +30,12 @@ st.title('情感分析系統')
 st.markdown('**請上傳音檔:**')
 file_uploader = st.sidebar.file_uploader(label="", type=".wav")
 
-if file_uploader is not None:
-   st.write(file_uploader)
+option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
+if file_uploader is not None and st.button('Submit'):
    emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
     #輸入資料、提取特徵
     test_mfcc_vector = []
-    option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
+    
     if option == 'sample 1':
         path = "./voice/03-02-03-01-02-01-07_happy.wav"
     if option == 'sample 2':    
