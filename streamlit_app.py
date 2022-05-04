@@ -34,7 +34,7 @@ st.title('情感分析系統')
 
 option = st.selectbox('select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
 
-if file_uploader is not None and st.button('Submit'):
+if st.button('Submit'):
     emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
     test_mfcc_vector = []
     if option == 'sample 1':
