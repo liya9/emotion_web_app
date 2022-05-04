@@ -2,5 +2,7 @@ lightgbm
 streamlit
 pandas
 numpy
-keras
 matplotlib
+tensorflow
+keras
+librosa
