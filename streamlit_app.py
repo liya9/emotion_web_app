@@ -51,16 +51,16 @@ if st.button('Submit'):
     pred = model_4_emo.predict(X_test)
     
     fig = plt.figure()
-    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
-    plt.rcParams['axes.unicode_minus'] = False
+    # plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
+    # plt.rcParams['axes.unicode_minus'] = False
     plt.rcParams.update({'font.size': 22})
-
+    font = fm.FontProperties(fname='c:\\windows\\fonts\\simsun.ttc')  # speicify font
     emo = ['怒', '樂', '哀', '喜']
     percent = list(pred[0]*100)
     x = np.arange(len(emo))
     plt.figure(figsize=(15,5))
     plt.barh(x, percent, height=0.3)
-    plt.yticks(x, emo)
-    plt.ylabel('情緒分類')
-    plt.xlabel('百分比(%)')
+    plt.yticks(x.str.decode('utf-8'), emo, fontproperties=font)
+    plt.ylabel('情緒分類'.str.decode('utf-8'), fontproperties=font)
+    plt.xlabel('百分比(%)'.str.decode('utf-8'), fontproperties=font)
     st.pyplot()
