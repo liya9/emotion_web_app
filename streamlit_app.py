@@ -31,7 +31,7 @@ def wav2mfcc(path, max_pad_size=11):
 # web page
 st.title('情感分析系統')
 
-option = st.selectbox('Please Select', ['sample 1', 'sample 2', 'sample 3', 'sample 4'])
+option = st.selectbox('Please Select', ['sample 1.wav', 'sample 2.wav', 'sample 3.wav', 'sample 4.wav'])
 
 if st.button('Submit'):
     emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
