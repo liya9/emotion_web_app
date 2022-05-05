@@ -36,13 +36,13 @@ option = st.selectbox('Please Select', ['sample 1.wav', 'sample 2.wav', 'sample 
 if st.button('Submit'):
     emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
     test_mfcc_vector = []
-    if option == 'sample 1':
+    if option == 'sample 1.wav':
         path = "./voice/03-02-03-01-02-01-07_happy.wav"
-    if option == 'sample 2':    
+    if option == 'sample 2.wav':    
         path = "./voice/03-02-04-02-01-01-07_sad.wav"
-    if option == 'sample 3':
+    if option == 'sample 3.wav':
         path = "./voice/03-02-05-01-02-01-07_angry.wav"
-    if option == 'sample 4':
+    if option == 'sample 4.wav':
         path = "./voice/16_01_02_01_kids-talking_fear.wav"
 
     mfcc = wav2mfcc(path, max_pad_size=50)
