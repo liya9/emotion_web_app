@@ -52,8 +52,6 @@ if st.button('Submit'):
     pred = model_4_emo.predict(X_test)
     
     fig = plt.figure()
-    # plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
-    # plt.rcParams['axes.unicode_minus'] = False
     plt.rcParams.update({'font.size': 22})
     emo = ['angry', 'happy', 'sad', 'calm']
     percent = list(pred[0]*100)
