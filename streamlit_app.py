@@ -43,7 +43,7 @@ if st.button('Submit'):
     if option == 'sample 3.wav':
         path = "./voice/03-02-05-01-02-01-07_angry.wav"
     if option == 'sample 4.wav':
-        path = "./voice/16_01_02_01_kids-talking_fear.wav"
+        path = "./voice/03-02-02-01-01-01-23_calm.wav"
 
     mfcc = wav2mfcc(path, max_pad_size=50)
     test_mfcc_vector.append(mfcc)
