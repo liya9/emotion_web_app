@@ -31,12 +31,12 @@ def wav2mfcc(path, max_pad_size=11):
 # web page
 st.title('情感分析系統')
 
-option = st.selectbox('Please Select', ['sample 10.wav', 'sample 2.wav', 'sample 3.wav', 'sample 4.wav'])
+option = st.selectbox('Please Select', ['sample 1.wav', 'sample 2.wav', 'sample 3.wav', 'sample 4.wav'])
 
 if st.button('Submit'):
     emo_dict = {'angry':0, 'happy':1, 'sad':2, 'calm':3}
     test_mfcc_vector = []
-    if option == 'sample 10.wav':
+    if option == 'sample 1.wav':
         path = "./voice/03-02-03-01-02-01-07_happy.wav"
     if option == 'sample 2.wav':    
         path = "./voice/03-02-04-02-01-01-07_sad.wav"
